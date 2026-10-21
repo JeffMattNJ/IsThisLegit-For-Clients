@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>Is This Legit? - Commands</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script>
+    /*
+     * commands.html - FunctionFile for "Is This Legit?"
+     *
+     * The manifest (VersionOverrides > DesktopFormFactor > FunctionFile)
+     * must point at a reachable page that loads Office.js. Classic Outlook,
+     * new Outlook and Outlook on the web all require it, even though the
+     * ribbon button uses ShowTaskpane and never calls a function here.
+     *
+     * Kept deliberately minimal and ES5-only so it loads in every Outlook
+     * webview (WebView2, EdgeHTML and the legacy IE11 engine).
+     * All analysis lives in taskpane.html.
+     */
+    Office.onReady(function () {
+      // Nothing to initialise. No ExecuteFunction or LaunchEvent handlers
+      // are declared in the manifest.
+    });
+  </script>
+</head>
+<body></body>
+</html>
