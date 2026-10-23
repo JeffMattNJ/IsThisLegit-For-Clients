@@ -599,8 +599,21 @@
 
   <footer>Is This Legit? · for Microsoft Outlook
     <!-- Update this when the manifest version changes -->
-    <div class="app-version">Version 1.0.5.1</div>
+    <div class="app-version" id="app-version">Version 1.0.5.1</div>
   </footer>
+  <script>
+    // Same file is served from both repos. When loaded from the test repo
+    // (domain-age-alert), label the footer so testers know which build they see.
+    (function () {
+      try {
+        if (/\/domain-age-alert\//i.test(window.location.pathname)) {
+          var v = document.getElementById("app-version");
+          v.textContent = v.textContent + " \u00B7 TEST BUILD";
+          v.style.color = "#f59e0b";
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <script>
     // ── Config ───────────────────────────────────────────────────────────────
